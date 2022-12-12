@@ -25,17 +25,29 @@ medic.summonPet('Pet2');
 // Equip weapons here to add them to ActiveWeapons
 // character.equipAbility('spellname');
 medic.equipWeapon('staff');
+warlock.equipWeapon('warlockStaff');
+gambler.equipWeapon('dagger');
 
 // Equip Abilities here to add them to Active Abilities
 medic.equipAbility('smite');
-
+warlock.equipAbility('fireball');
+gambler.equipAbility('slash');
 // Level up your character which will also increase their stats
 medic.levelUp();
+warlock.levelUp();
+gambler.levelUp();
+
+// logging character stats after level up
+console.log(medic);
+console.log(warlock);
+console.log(gambler);
 
 // Return damage based on equipped items. 
-console.log(medic.getDamage());
+console.log(medic.name + "'s Damage is", medic.getDamage());
+console.log(warlock.name + "'s Damage is", warlock.getDamage());
+console.log(gambler.name + "'s Damage is", gambler.getDamage());
 
-console.log(warlock);
+
 
 
 
