@@ -1,5 +1,5 @@
 const Weapon = require('./weapon');
 
-const healingStaff = new Weapon('staff', 2);
+const Staff = new Weapon('staff', 10);
 
-module.exports = healingStaff;
+module.exports = Staff;

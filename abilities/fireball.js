@@ -1,5 +1,5 @@
 const Ability = require('./ability')
 
-const fireball = new Ability('fireball', 5, 20);
+const Fireball = new Ability('fireball', 10);
 
-module.exports = fireball;
+module.exports = Fireball;

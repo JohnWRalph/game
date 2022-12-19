@@ -1,8 +1,8 @@
 class Ability {
-    constructor(name, damage, mana) {
+    constructor(name, attack) {
         this.name = name;
-        this.damage = damage;
-        this.mana = mana;
+        this.attack = attack;
+
     }
 }
 

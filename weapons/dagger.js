@@ -1,5 +1,5 @@
 const Weapon = require('./weapon');
 
-const goldenDagger = new Weapon('dagger', 2);
+const Dagger = new Weapon('dagger', 10);
 
-module.exports = goldenDagger;
+module.exports = Dagger;

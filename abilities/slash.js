@@ -1,5 +1,5 @@
-const Ability = require('./ability');
+const Weapon = require('../weapons/weapon');
 
-const slash = new Ability('slash', 10, 5);
+const Slash = new Weapon('slash', 10);
 
-module.exports = slash;
+module.exports = Slash;
