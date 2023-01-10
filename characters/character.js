@@ -2,12 +2,14 @@ const Ability = require('../abilities/ability');
 const config = require('../config/config');
 
 class Character {
-    constructor(name, health, attack, magic) {
+    constructor(name, className, health, attack, magic) {
         this.name = name;
+        this.className = className;
         this.level = 1;
         this.health = health;
         this.attack = attack;
         this.magic = magic;
+
         this.pets = [];
         this.weapons = [];
         this.abilities = []
@@ -26,39 +28,63 @@ class Character {
             this.magic = this.magic + 3;
         }
     }
+    getName() {
+        return this.name;
+    }
 
+    getClassName() {
+        return this.className;
+    }
 
-    //     } else if (this.className === config.classNames.GamblerClassName) {
-    //         this.attack = this.attack + 10;
-    //         this.magic = this.magic + 4;
-    //         this.defense = this.defense + 3;
-    //         this.speed = this.speed + 10;
-    //         this.health = this.health + 10;
-    //         this.mana = this.mana + 2;
-
-    //     } else if (this.className === config.classNames.MedicClassName) {
-    //         this.attack = this.attack + 4;
-    //         this.magic = this.magic + 5;
-    //         this.defense = this.defense + 3;
-    //         this.speed = this.speed + 1;
-    //         this.health = this.health + 10;
-    //         this.mana = this.mana + 5;
-
-    //     }
-    // }
-
-
-    getDamage() {
-        if (move === "useWeapon") {
-            console.log(this.activeWeapons.attack);
-            const damage = this.activeWeapons.attack;
-            return this.activeWeapons.attack;
-        } else {
-            console.log("Selected ability is not equipped");
-            return 0
+    getLevel() {
+        return this.level;
+    }
+    getDamage(move) {
+        if (move === "punch") {
+            return this.attack;
         }
+
+        else if (move === "weapon") {
+            // console.log(this.activeWeapon.attack);
+            const damage = this.activeWeapon.attack;
+            return this.activeWeapon.attack;
+        } else if (move === "ability") {
+            // console.log(this.activeAbility.attack);
+            return this.activeAbility.attack;
+        } else if (move === "pets") {
+            if (this.activePets.length > 1) {
+                // console.log(this.activePets.attack);
+                return this.activePets.attack;
+            } else {
+                console.log("Selected ability is not equipped");
+                return 0;
+            }
+        }
+
+    }
+    getStatsString() {
+        let str = "";
+        str += `Health: ${this.health}<br>`;
+        str += `Attack: ${this.attack}<br>`;
+        str += `Magic: ${this.magic}<br>`;
+        str += `Pets: ${this.pets}<br>`;
+        str += `Weapons: ${this.weapons}<br>`;
+        str += `Abilities: ${this.abilities}<br>`;
+
+        if (this.activePets.length > 0) {
+            str += `Active Pets: ${this.activePets.name}<br>`;
+        }
+        if (this.activeWeapon) {
+            str += `Active Weapons: ${this.activeWeapon.name}<br>`;
+        }
+        if (this.activeAbility) {
+            str += `Active Abilites: ${this.activeAbility.name}`;
+        }
+        return str;
     }
 }
+
+
 // if (this.mana < ability.mana) {
 //     console.log("not enough mana");
 //     return 0

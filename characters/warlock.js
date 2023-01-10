@@ -13,7 +13,7 @@ const Character = require('./character');
 
 class Warlock extends Character {
     constructor(name) {
-        super(name, 100, 5, 15);
+        super(name, "warlock", 100, 5, 15);
         this.activeAbility = fireball;
         this.activeWeapon = staff;
         this.activePets.push(startingPet);

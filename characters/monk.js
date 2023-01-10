@@ -10,7 +10,7 @@ const Character = require('./character');
 
 class Monk extends Character {
     constructor(name) {
-        super(name, 100, 5, 15);
+        super(name, "monk", 100, 5, 15);
         this.activeAbility = strike;
         this.activeWeapon = cestus;
         this.activePets.push(startingPet);
